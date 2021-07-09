@@ -1,0 +1,143 @@
+{
+	"name": "starter-extension",
+	"displayName": "starter generator tools",
+	"description": "typescript-express-starter code generator tools Visual Studio Code extension",
+	"publisher": "george",
+	"keywords": [
+		"typescript-express-starter",
+		"starter-cli",
+		"Visual Studio Code extension"
+	],
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.route",
+		"onCommand:extension.controller",
+		"onCommand:extension.dto",
+		"onCommand:extension.model",
+		"onCommand:extension.service",
+		"onCommand:extension.interface",
+		"onCommand:extension.test",
+		"onCommand:extension.module"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.route",
+				"title": "generate route file"
+			},
+			{
+				"command": "extension.controller",
+				"title": "generate controller file"
+			},
+			{
+				"command": "extension.dto",
+				"title": "generate dto file"
+			},
+			{
+				"command": "extension.model",
+				"title": "generate model file"
+			},
+			{
+				"command": "extension.service",
+				"title": "generate service file"
+			},
+			{
+				"command": "extension.interface",
+				"title": "generate interface file"
+			},
+			{
+				"command": "extension.test",
+				"title": "generate test file"
+			},
+			{
+				"command": "extension.module",
+				"title": "generate all files"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.route",
+					"when": "explorerResourceIsFolder",
+					"group": "va@1"
+				},
+				{
+					"command": "extension.controller",
+					"when": "explorerResourceIsFolder",
+					"group": "va@2"
+				},
+				{
+					"command": "extension.dto",
+					"when": "explorerResourceIsFolder",
+					"group": "va@3"
+				},
+				{
+					"command": "extension.model",
+					"when": "explorerResourceIsFolder",
+					"group": "va@4"
+				},
+				{
+					"command": "extension.service",
+					"when": "explorerResourceIsFolder",
+					"group": "va@5"
+				},
+				{
+					"command": "extension.interface",
+					"when": "explorerResourceIsFolder",
+					"group": "va@6"
+				},
+				{
+					"command": "extension.test",
+					"when": "explorerResourceIsFolder",
+					"group": "va@7"
+				},
+				{
+					"command": "extension.module",
+					"when": "explorerResourceIsFolder",
+					"group": "va@8"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development --watch",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.39.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"ts-loader": "^7.0.1",
+		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.2.0",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11"
+	},
+	"dependencies": {
+		"starter-cli": "git+https://github.com/george-quzhi/starter-cli.git"
+	},
+	"bugs": {
+		"url": "https://github.com/george-quzhi/starter-extension/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/george-quzhi/starter-extension"
+	},
+	"homepage": "https://github.com/george-quzhi/starter-extension/main/README.md"
+}
